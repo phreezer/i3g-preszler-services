@@ -1,0 +1,72 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+
+
+//== Colors
+
+$brand-primary:              #114964 !default;
+$brand-secondary:            #e6c280 !default;
+
+$text-light:                 rgba(255, 255, 255, 0.8) !default;
+$text-dark:                  rgba(0, 0, 0, 0.8) !default;
+
+
+
+//== Block Size
+// Controll size of padding and margins based on this
+$block-height:               30px;
+$block-width:                30px;
+
+
+//== Shadows
+
+$shadow-default:             0 0 15px 4px rgba(0, 0, 0, 0.2) !default;
+
+
+//== Media queries breakpoints
+
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+$screen-xlg:                 1920px !default;
+$screen-xlg-min:             $screen-xlg !default;
+$screen-xlg-desktop:         $screen-xlg-min !default;
+
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xlg-min - 1) !default;
+
+
+
+//== Slick Slider
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: white !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 16px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;

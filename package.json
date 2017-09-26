@@ -1,0 +1,49 @@
+{
+  "name": "i3g-preszler-services",
+  "description": "Services Cards first used for Preszler & Bunch",
+  "version": "0.1.0",
+  "homepage": "http://i-3global.com",
+  "main": "./dist/js/i3g-preszler-services.js",
+  "style": "./dist/scss/i3g-preszler-services.scss",
+  "sass": "./dist/scss/i3g-preszler-services.scss",
+  "author": {
+    "name": "i3Global",
+    "url": "http://i-3global.com/"
+  },
+  "contributors": [
+    {
+      "name": "Heath Showalter",
+      "email": "heath.showalter@i-3global.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phreezer/i3g-preszler-services"
+  },
+  "bugs": {
+    "url": "https://github.com/phreezer/i3g-preszler-services/issues"
+  },
+  "keywords": [
+    "i3g"
+  ],
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "~2.2.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-uglify": "~3.0.1",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-git": "^1.0.7",
+    "grunt-preprocess": "^5.1.0",
+    "grunt-sass": "^2.0.0",
+    "load-grunt-tasks": "^3.5.2",
+    "serve-static": "^1.12.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "private": true,
+  "license": "UNLICENSED"
+}

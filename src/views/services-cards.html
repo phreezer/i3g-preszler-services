@@ -1,0 +1,27 @@
+<section id="services-cards" class="margin-120">
+	<div class="container" >
+		<div class="row">
+
+			<div class="grid">
+				{{#each slides}}
+				<a href="{{{url}}}" target="{{{url_target}}}">
+					<figure class="effect-roxy">
+						<img style="background-image: url('{{image.url}}');" alt="{{{title}}}">
+						<figcaption>
+							<h2>{{{title}}}</h2>
+							<div class="caption-container">
+								<div class="caption">{{{description}}}</div>
+							</div>
+							{{#if learn_more_button}}
+							<button class="btn btn-secondary">Learn More</button>
+							{{/if}}
+						</figcaption>
+					</figure>
+				</a>
+				{{/each}}
+
+			</div>
+
+		</div>
+	</div>
+</section>
