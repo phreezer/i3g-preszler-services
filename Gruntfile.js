@@ -195,6 +195,12 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		wiredep: {
+			app: {
+				src: [ '<%= app %>/*.html' ],
+				ignorePath: /\.\.\//
+			}
+		},
 		htmlbuild: {
 			dist: {
 				src: '<%= example %>/example-template.html',
@@ -214,20 +220,7 @@ module.exports = function (grunt) {
 							'../<%= dist %>/css/bootstrap-theme.min.css',
 							'../<%= dist %>/css/<%= cssFileName %>.min.css'
 						]
-					},
-					sections: {
-						views: '<%= fixturesPath %>/views/**/*.html',
-						templates: '<%= fixturesPath %>/templates/**/*.html',
-						layout: {
-							header: '<%= fixturesPath %>/layout/header.html',
-							footer: '<%= fixturesPath %>/layout/footer.html'
-						}
-					},
-					data: {
-						// Data to pass to templates
-						version: "0.1.0",
-						title: "test",
-					},
+					}
 				}
 			}
 		},
@@ -251,6 +244,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-html-build');
+	grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-git');
 
@@ -272,6 +266,8 @@ module.exports = function (grunt) {
 			'preprocess:prod',
 			'gitadd:task',
 			'gitcommit:local',
+			'wiredep:app',
+			'htmlbuild:dist'
 		]);
 	});
 

@@ -40,6 +40,7 @@
     "grunt-html-build": "^0.7.1",
     "grunt-preprocess": "^5.1.0",
     "grunt-sass": "^2.0.0",
+    "grunt-wiredep": "^3.0.1",
     "load-grunt-tasks": "^3.5.2",
     "serve-static": "^1.12.3"
   },
