@@ -2,7 +2,7 @@
 	'use strict';
 	/*jshint indent:4 */
 
-	$.fn.appServicesCards = function () {
+	$.fn.preszlerServices = function () {
 
 		// Set Defaults
 		$.app = $.app || {};
@@ -61,6 +61,6 @@
 	};
 
 
-	$('.app-services-cards').appServicesCards();
+	$('.preszler-services').preszlerServices();
 
 }(jQuery));

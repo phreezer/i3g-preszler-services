@@ -99,14 +99,16 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'.tmp/styles/main.css': '<%= app %>/scss/main.scss'
+					'.tmp/styles/main.css': '<%= app %>/scss/main.scss',
+					'.tmp/styles/bootstrap-theme.css': '<%= app %>/scss/bootstrap-theme.scss'
 				}
 			}
 		},
 		cssmin: {
 			dist: {
 				files: {
-					'<%= dist %>/css/<%= cssFileName %>.min.css': '.tmp/styles/main.css'
+					'<%= dist %>/css/<%= cssFileName %>.min.css': '.tmp/styles/main.css',
+					'<%= dist %>/css/bootstrap-theme.min.css': '.tmp/styles/bootstrap-theme.css'
 				}
 			}
 		},
