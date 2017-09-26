@@ -1,5 +1,5 @@
 .app-slideshow {
-
+	color: $brand-primary;
 }
 
 
@@ -7,7 +7,9 @@
 
 /* X-Small Screen */
 @media (max-width: $screen-xs-max) {
-
+	.app-slideshow {
+		color: $brand-secondary;
+	}
 }
 
 /* Small Screen */
