@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					open: true,
-					base: '<%= yeoman.dist %>'
+					base: '<%= dist %>'
 				}
 			}
 		},
@@ -56,6 +56,18 @@ module.exports = function (grunt) {
 			'* Homepage: <%= pkg.homepage %>\n' +
 			'* Author: <%= pkg.author.name %>\n' +
 			'* Author URL: <%= pkg.author.url %>\n*/\n',
+		clean: {
+			dist: {
+				files: [ {
+					dot: true,
+					src: [
+						'.tmp',
+						'<%= dist %>/{,*/}*',
+						'!<%= dist %>/.git*'
+					]
+				} ]
+			}
+		},
 		concat: {
 			options: {
 				separator: '\n\n',
@@ -198,6 +210,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-git');
 
@@ -206,8 +219,7 @@ module.exports = function (grunt) {
 		appConfig.gitMessage = 'Updated ' + appConfig.timestamp;
 
 		grunt.task.run( [
-			'gitadd:task',
-			'gitcommit:local',
+			'clean:dist',
 			'jshint',
 			'concat',
 			'uglify',
@@ -217,7 +229,9 @@ module.exports = function (grunt) {
 			'copy:images',
 			'copy:fonts',
 			'copy:fonts',
-			'preprocess:prod'
+			'preprocess:prod',
+			'gitadd:task',
+			'gitcommit:local',
 		]);
 	});
 
