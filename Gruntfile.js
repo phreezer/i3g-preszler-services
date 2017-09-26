@@ -2,12 +2,13 @@
 module.exports = function (grunt) {
 
 	var serveStatic = require('serve-static');
-	var appConfig{
+	var appConfig = {
 		timestamp: new Date().toLocaleString(),
 		gitMessage: ''
-	}
+	};
 
 	grunt.initConfig({
+		config: appConfig,
 		app: require( './bower.json' ).appPath || 'src',
 		dist: 'dist',
 		pkg: grunt.file.readJSON('package.json'),
@@ -175,7 +176,7 @@ module.exports = function (grunt) {
 		gitcommit: {
 			local: {
 				options: {
-					message: '<%= yeoman.gitMessage %>'
+					message: '<%= config.gitMessage %>'
 				}
 			}
 		},
