@@ -11,6 +11,7 @@ module.exports = function (grunt) {
 		config: appConfig,
 		app: require( './bower.json' ).appPath || 'src',
 		dist: 'dist',
+		example: 'examples',
 		pkg: grunt.file.readJSON('package.json'),
 		appName: '<%= pkg.name %>',
 		jsFileName: '<%= pkg.name %>',
@@ -194,6 +195,42 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		htmlbuild: {
+			dist: {
+				src: '<%= example %>/example-template.html',
+				dest: '/index.html',
+				options: {
+					beautify: true,
+					prefix: '//some-cdn',
+					relative: true,
+					basePath: false,
+					scripts: {
+						bundle: [
+							'../<%= dist %>/js/*.js'
+						]
+					},
+					styles: {
+						bundle: [
+							'../<%= dist %>/css/bootstrap-theme.min.css',
+							'../<%= dist %>/css/<%= cssFileName %>.min.css'
+						]
+					},
+					sections: {
+						views: '<%= fixturesPath %>/views/**/*.html',
+						templates: '<%= fixturesPath %>/templates/**/*.html',
+						layout: {
+							header: '<%= fixturesPath %>/layout/header.html',
+							footer: '<%= fixturesPath %>/layout/footer.html'
+						}
+					},
+					data: {
+						// Data to pass to templates
+						version: "0.1.0",
+						title: "test",
+					},
+				}
+			}
+		},
 		watch: {
 			files: ['<%= concat.js.src %>', '<%= app %>/**/*.scss', '<%= app %>/**/*.html'],
 			tasks: ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:html'],
@@ -213,6 +250,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-html-build');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-git');
 
@@ -230,7 +268,7 @@ module.exports = function (grunt) {
 			'copy:sass',
 			'copy:images',
 			'copy:fonts',
-			'copy:fonts',
+			'copy:html',
 			'preprocess:prod',
 			'gitadd:task',
 			'gitcommit:local',

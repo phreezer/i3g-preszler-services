@@ -37,6 +37,7 @@
     "grunt-contrib-uglify": "~3.0.1",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-git": "^1.0.7",
+    "grunt-html-build": "^0.7.1",
     "grunt-preprocess": "^5.1.0",
     "grunt-sass": "^2.0.0",
     "load-grunt-tasks": "^3.5.2",
