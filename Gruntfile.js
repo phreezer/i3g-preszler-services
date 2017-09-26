@@ -197,7 +197,7 @@ module.exports = function (grunt) {
 		},
 		wiredep: {
 			app: {
-				src: [ '<%= app %>/*.html' ],
+				src: [ '<%= example %>/*.html' ],
 				ignorePath: /\.\.\//
 			}
 		},
@@ -266,8 +266,8 @@ module.exports = function (grunt) {
 			'preprocess:prod',
 			'gitadd:task',
 			'gitcommit:local',
-			'wiredep:app',
-			'htmlbuild:dist'
+			'htmlbuild:dist',
+			'wiredep:app'
 		]);
 	});
 
