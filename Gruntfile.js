@@ -203,8 +203,8 @@ module.exports = function (grunt) {
 		},
 		htmlbuild: {
 			dist: {
-				src: '<%= example %>/example-template.html',
-				dest: '/index.html',
+				src: '<%= example %>/templates/example-template.html',
+				dest: '<%= example %>/index.html',
 				options: {
 					beautify: true,
 					prefix: '//some-cdn',
