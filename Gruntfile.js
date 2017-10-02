@@ -35,7 +35,9 @@ module.exports = function (grunt) {
 								res.setHeader('Access-Control-Allow-Methods', '*');
 								next();
 							}),
-							serveStatic( 'dist' ),
+							connect().use(
+								'/dist',
+								serveStatic( './dist' )),
 							connect().use(
 								'/bower_components',
 								serveStatic( './bower_components' )

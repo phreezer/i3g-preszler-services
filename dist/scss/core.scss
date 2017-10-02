@@ -1,33 +1,193 @@
-.app-slideshow {
-	color: $brand-primary;
-}
-
-
-
-
-/* X-Small Screen */
-@media (max-width: $screen-xs-max) {
-	.app-slideshow {
-		color: $brand-secondary;
+.preszler-services {
+	.grid {
+		position: relative;
+		margin: 0 auto;
+		padding: 1em 0 4em;
+		list-style: none;
+		text-align: center;
+	}
+	/* Common style */
+	.grid figure {
+		position: relative;
+		float: left;
+		overflow: hidden;
+		margin: 10px 1%;
+		width: 31%;
+		background: #3085a3;
+		text-align: center;
+		cursor: pointer;
+	}
+	.grid figure img {
+		position: relative;
+		display: block;
+		min-height: 100%;
+		max-width: 100%;
+		opacity: 0.3;
+	}
+	.grid figure figcaption {
+		padding: 2em;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 1.25em;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	.grid figure figcaption::before,
+	.grid figure figcaption::after {
+		pointer-events: none;
+	}
+	.grid figure figcaption,
+	.grid figure figcaption>a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	/* Anchor will cover the whole item by default */
+	/* For some effects it will show as a button */
+	.grid figure figcaption>a {
+		z-index: 1000;
+		text-indent: 200%;
+		white-space: nowrap;
+		font-size: 0;
+		opacity: 0;
+	}
+	.grid figure h2 {
+		word-spacing: -0.15em;
+		font-weight: 300;
+	}
+	.grid figure h2 span {
+		font-weight: 800;
+	}
+	.grid figure h2,
+	.grid figure .btn {
+		margin: 0;
+	}
+	.grid figure .btn {
+		letter-spacing: 1px;
+		font-size: 68.5%;
+	}
+	figure.effect-roxy {
+		background: -webkit-linear-gradient(45deg, #e6c280 0%, #003c59 100%);
+		background: linear-gradient(45deg, #e6c280 0%, #003c59 100%);
+	}
+	figure.effect-roxy img {
+		max-width: none;
+		width: -webkit-calc(100% + 60px);
+		width: calc(100% + 60px);
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: translate3d(-50px, 0, 0);
+		transform: translate3d(-50px, 0, 0);
+	}
+	figure.effect-roxy figcaption::before {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		bottom: 30px;
+		left: 30px;
+		border: 3px solid #e6c280;
+		content: '';
+		opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: translate3d(-20px, 0, 0);
+		transform: translate3d(-20px, 0, 0);
+	}
+	figure.effect-roxy figcaption {
+		padding: 3em;
+		text-align: left;
+	}
+	figure.effect-roxy h2 {
+		font-size: 24px;
+		padding: 45% 0 10px 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+	}
+	figure.effect-roxy .btn {
+		opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+		position: absolute;
+		bottom: 60px
+	}
+	figure.effect-roxy .caption-container {
+		opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+		position: absolute;
+		bottom: 120px;
+		width: -webkit-calc(100% - 120px);
+		width: calc(100% - 120px);
+		font-size: .8em;
+	}
+	figure.effect-roxy:hover img {
+		opacity: 0.1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	figure.effect-roxy:hover figcaption::before,
+	figure.effect-roxy:hover .btn {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	figure.effect-roxy:hover .caption-container {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	figure.effect-roxy:hover h2 {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100px, 0);
+		transform: translate3d(0, -100px, 0);
 	}
 }
 
-/* Small Screen */
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 
+/* X-Small Screen */
+
+@media (max-width: $screen-xs-max) {
+	.preszler-services {
+		.grid figure {
+			display: inline-block;
+			float: none;
+			margin: 10px auto;
+			width: 100%;
+		}
+	}
 }
+
+
+/* Small Screen */
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	.preszler-services {
+		.grid figure {
+			display: inline-block;
+			float: none;
+			margin: 10px 1%;
+			width: 46%;
+		}
+	}
+}
+
 
 /* Medium Screen */
-@media (min-width: $screen-md-min) {
 
-}
+@media (min-width: $screen-md-min) {}
+
 
 /* Large Screen */
-@media (min-width: $screen-lg-min) {
 
-}
+@media (min-width: $screen-lg-min) {}
+
 
 /* X-Large Screen */
-@media (min-width: $screen-xlg-min) {
 
-}
+@media (min-width: $screen-xlg-min) {}

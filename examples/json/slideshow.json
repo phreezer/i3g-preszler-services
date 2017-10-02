@@ -1,13 +1,13 @@
 {
-	"slideshow": [{
+	"services": [{
 		"title": "Social Security",
 		"description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum aliquet purus vitae rhoncus. Morbi laoreet velit vel rhoncus congue. Quisque pretium orci id ante pulvinar auctor.<\/p>\n",
 		"image": {
 			"ID": 71,
 			"id": 71,
 			"title": "intro-social-security",
-			"filename": "intro-social-security.jpg",
-			"url": "http:\/\/localhost\/preszler\/wp-content\/uploads\/2017\/07\/intro-social-security.jpg",
+			"filename": "commercial-and-business-law.jpg",
+			"url": "\/uploads\/commercial-and-business-law.jpg",
 			"alt": "",
 			"author": "1",
 			"description": "",
