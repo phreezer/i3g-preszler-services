@@ -1,6 +1,6 @@
 {
-	"name": "i3g-slider-preszler",
-	"version": "0.1.7",
+	"name": "i3g-preszler-services",
+	"version": "0.1.0",
 	"description": "",
 	"authors": [
 		{
@@ -18,8 +18,8 @@
 	"i3g"
   ],
 	"main": [
-	"dist/css/i3g-slider-preszler.min.css",
-	"dist/js/i3g-slider-preszler.js"
+	"dist/css/i3g-preszler-services.min.css",
+	"dist/js/i3g-preszler-services.js"
   ],
 	"ignore": [
 	"docs",
