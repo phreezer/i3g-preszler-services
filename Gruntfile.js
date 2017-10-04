@@ -197,6 +197,15 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		gitpush: {
+			origin: {
+				options: {
+					remote: 'origin',
+					branch: 'master',
+					tags: 'v<%= pkg.version %>'
+				}
+			}
+		},
 		wiredep: {
 			app: {
 				src: [ '<%= example %>/*.html' ],
@@ -274,8 +283,8 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask( 'publish', 'Git Push', function ( target ) {
-		appConfig.gitMessage = 'Updated ' + appConfig.timestamp;
-		grunt.task.run("build");
+		appConfig.gitMessage = 'Release ' + appConfig.timestamp;
+		grunt.task.run(['build', 'gitpush:origin']);
 	});
 
 	grunt.registerTask('serve', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:fonts', 'preprocess:dev', 'connect:livereload', 'watch']);
