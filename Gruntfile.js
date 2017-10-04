@@ -269,7 +269,7 @@ module.exports = function (grunt) {
 
 
 	grunt.registerTask( 'build', 'Build', function ( target ) {
-		appConfig.gitMessage = 'Updated ' + appConfig.timestamp;
+		appConfig.gitMessage = 'Local Dev ' + appConfig.timestamp;
 
 		grunt.task.run( [
 			'clean:dist',
@@ -290,7 +290,14 @@ module.exports = function (grunt) {
 		]);
 	});
 
-	grunt.registerTask( 'publish', 'Git Push', function ( target ) {
+	// Push to the remote Git Server
+	grunt.registerTask( 'push', 'Git Push', function ( target ) {
+		appConfig.gitMessage = 'Dev ' + appConfig.timestamp;
+		grunt.task.run(['build', 'gitpush:origin']);
+	});
+
+	// When a release is ready publish it on Github
+	grunt.registerTask( 'publish', 'Github Release', function ( target ) {
 		appConfig.gitMessage = 'Release ' + appConfig.timestamp;
 		grunt.task.run(['build', 'gittag:addtag', 'gitpush:origin']);
 	});
