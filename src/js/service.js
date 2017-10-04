@@ -27,7 +27,15 @@
 		}
 
 
+		function limitText (txt, limit) {
+			if(txt.length > limit) {
+				txt = txt.substr(0, limit) + '...';
+			}
+			return txt;
+		}
+
 		function formatData(data) {
+			data.description = limitText(data.description, 40);
 			return data;
 		}
 
