@@ -1,6 +1,6 @@
 # [Some Component - jQuery plugin](http://i-3global/) #
 
->A jQuery Plugin by i3 Global
+>A jQuery Plugin by i3 Global developed by Marcus Heath Showalter
 
 Main features:
 
