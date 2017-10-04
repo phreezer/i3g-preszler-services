@@ -210,7 +210,12 @@ module.exports = function (grunt) {
 				options: {
 					remote: 'origin',
 					branch: 'master',
-					tags: true
+					//tags: true
+					/*
+					replace --tags with --follow-tags when it is supported or
+					set follow-links default with this command:
+						git config --global push.followTags true
+					*/
 				}
 			}
 		},
