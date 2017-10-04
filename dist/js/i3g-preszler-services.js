@@ -1,5 +1,5 @@
 /*!
-* i3g-preszler-services - v0.1.0
+* i3g-preszler-services - v0.1.2
 * Homepage: http://i-3global.com
 * Author: i3Global
 * Author URL: http://i-3global.com/
