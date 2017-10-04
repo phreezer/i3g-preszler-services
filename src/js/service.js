@@ -28,6 +28,7 @@
 
 
 		function limitText (txt, limit) {
+			txt = txt || '';
 			if(txt.length > limit) {
 				txt = txt.substr(0, limit) + '...';
 			}
@@ -35,7 +36,10 @@
 		}
 
 		function formatData(data) {
-			data.description = limitText(data.description, 40);
+			$.each(data, function(index, value) {
+				data[index].description = limitText(data[index].description, 40);
+			});
+
 			return data;
 		}
 
