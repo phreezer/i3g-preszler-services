@@ -197,12 +197,19 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		gittag: {
+			addtag: {
+				options: {
+					tag: '<%= pkg.version %>',
+					message: '<%= config.gitMessage %>'
+				}
+			}
+		},
 		gitpush: {
 			origin: {
 				options: {
 					remote: 'origin',
-					branch: 'master',
-					tags: 'v<%= pkg.version %>'
+					branch: 'master'
 				}
 			}
 		},
@@ -284,7 +291,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask( 'publish', 'Git Push', function ( target ) {
 		appConfig.gitMessage = 'Release ' + appConfig.timestamp;
-		grunt.task.run(['build', 'gitpush:origin']);
+		grunt.task.run(['build', 'gittag:addtag', 'gitpush:origin']);
 	});
 
 	grunt.registerTask('serve', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:fonts', 'preprocess:dev', 'connect:livereload', 'watch']);
