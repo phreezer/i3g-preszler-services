@@ -1,7 +1,7 @@
 {
   "name": "i3g-preszler-services",
   "description": "Services Cards first used for Preszler & Bunch",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "http://i-3global.com",
   "main": "./dist/js/i3g-preszler-services.js",
   "style": "./dist/scss/i3g-preszler-services.scss",
