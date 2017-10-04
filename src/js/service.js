@@ -6,7 +6,7 @@
 	$.app.config = $.app.config || {
 		API_SERVER: '/',
 		API_PATH: 'wp-json/acf/v2/',
-		API_ENDPOINT: 'options/slideshow'
+		API_ENDPOINT: 'options/services'
 	};
 
 
@@ -17,7 +17,7 @@
 			defaults = $.app.config,
 			cached = null;
 
-		defaults.API_ENDPOINT = 'options/slideshow';
+		defaults.API_ENDPOINT = 'options/services';
 
 
 		function getConfig(defaults, options) {
@@ -41,7 +41,7 @@
 			// @endif
 
 			// @ifdef DEBUG
-			url = 'json/slideshow.json';
+			url = 'json/services.json';
 			// @endif
 
 			console.log('url:',url);
