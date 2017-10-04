@@ -175,6 +175,14 @@
 			margin: 10px 1%;
 			width: 46%;
 		}
+		.caption-container {
+			display: none;
+		}
+		.grid figure .btn {
+			width: 70%;
+			margin: 0 15% !important;
+		}
+		.grid figure figcaption { padding:0; }
 	}
 }
 
