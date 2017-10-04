@@ -37,7 +37,7 @@
 
 		function formatData(data) {
 			$.each(data, function(index, value) {
-				data[index].description = limitText(data[index].description, 40);
+				data[index].description = limitText(data[index].description, 80);
 			});
 
 			return data;
