@@ -198,7 +198,7 @@ module.exports = function (grunt) {
 			}
 		},
 		gittag: {
-			addtag: {
+			prod: {
 				options: {
 					tag: '<%= pkg.version %>',
 					message: '<%= config.gitMessage %>'
@@ -302,7 +302,7 @@ module.exports = function (grunt) {
 	// When a release is ready publish it on Github
 	grunt.registerTask( 'publish', 'Github Release', function ( target ) {
 		appConfig.gitMessage = 'Release ' + appConfig.timestamp;
-		grunt.task.run(['build', 'gittag:addtag', 'gitpush:origin']);
+		grunt.task.run(['build', 'gittag:prod', 'gitpush:origin']);
 	});
 
 	grunt.registerTask('serve', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:fonts', 'preprocess:dev', 'connect:livereload', 'watch']);

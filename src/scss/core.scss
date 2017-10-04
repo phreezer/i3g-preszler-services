@@ -183,8 +183,8 @@
 
 		.grid figure figcaption { padding:0; }
 
-		.grid figure figcaption h2::before,
-		.grid figure figcaption .caption-container::before {
+		.grid figure figcaption h2,
+		.grid figure figcaption .caption-container {
 			width: 100%;
 			padding: 20%;
 		}
