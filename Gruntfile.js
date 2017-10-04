@@ -266,13 +266,17 @@ module.exports = function (grunt) {
 			'copy:fonts',
 			'copy:html',
 			'preprocess:prod',
-			'gitadd:task',
-			'gitcommit:local',
 			'htmlbuild:dist',
-			'wiredep:app'
+			'wiredep:app',
+			'gitadd:task',
+			'gitcommit:local'
 		]);
 	});
 
+	grunt.registerTask( 'publish', 'Git Push', function ( target ) {
+		appConfig.gitMessage = 'Updated ' + appConfig.timestamp;
+		grunt.task.run("build");
+	});
 
 	grunt.registerTask('serve', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:fonts', 'preprocess:dev', 'connect:livereload', 'watch']);
 
