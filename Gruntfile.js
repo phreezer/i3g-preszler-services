@@ -209,7 +209,8 @@ module.exports = function (grunt) {
 			origin: {
 				options: {
 					remote: 'origin',
-					branch: 'master'
+					branch: 'master',
+					tags: true
 				}
 			}
 		},
