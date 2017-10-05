@@ -56,10 +56,7 @@
 
 			url = config.API_SERVER + config.API_PATH + config.API_ENDPOINT;
 
-
-			console.log('url:',url);
 			$.get(url, function (data) {
-				console.log('data', data.services);
 				cached = formatData(data.services);
 				deferred.resolve(cached);
 			});
@@ -69,7 +66,6 @@
 
 
 		function get(options) {
-			console.log('options:', options);
 			config = getConfig(defaults, options);
 			var deferred = Q.defer();
 			if (cached === null) {
@@ -144,9 +140,7 @@
 			templateUpdate();
 
 			// Get JSON Feed
-			console.log('Init Directive');
 			$.serviceServices().get().then(function(data) {
-				console.log('returned from Service:', data);
 				scope.services = data;
 				templateUpdate();
 			});

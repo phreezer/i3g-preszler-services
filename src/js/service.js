@@ -55,10 +55,7 @@
 			// @ifdef DEBUG
 			url = 'json/services.json';
 			// @endif
-
-			console.log('url:',url);
 			$.get(url, function (data) {
-				console.log('data', data.services);
 				cached = formatData(data.services);
 				deferred.resolve(cached);
 			});
@@ -68,7 +65,6 @@
 
 
 		function get(options) {
-			console.log('options:', options);
 			config = getConfig(defaults, options);
 			var deferred = Q.defer();
 			if (cached === null) {

@@ -248,7 +248,7 @@ module.exports = function (grunt) {
 		},
 		removelogging: {
 			dist: {
-				src: [ '<%= app %>/scripts/**/*.js', '!<%= app %>/scripts/**/console-log.js' ]
+				src: [ '<%= app %>/js/**/*.js', '!<%= app %>/js/**/console-log.js' ]
 			}
 		},
 		watch: {

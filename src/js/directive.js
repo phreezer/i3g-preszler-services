@@ -42,9 +42,7 @@
 			templateUpdate();
 
 			// Get JSON Feed
-			console.log('Init Directive');
 			$.serviceServices().get().then(function(data) {
-				console.log('returned from Service:', data);
 				scope.services = data;
 				templateUpdate();
 			});
