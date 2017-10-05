@@ -1,7 +1,7 @@
 {
   "name": "i3g-preszler-services",
   "description": "Services Cards first used for Preszler & Bunch",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "homepage": "http://i-3global.com",
   "main": "./dist/js/i3g-preszler-services.js",
   "style": "./dist/scss/i3g-preszler-services.scss",
@@ -36,6 +36,7 @@
 	"grunt-contrib-jshint": "~1.1.0",
 	"grunt-contrib-uglify": "~3.0.1",
 	"grunt-contrib-watch": "~1.0.0",
+	"grunt-remove-logging": "phreezer/grunt-remove-logging",
 	"grunt-git": "^1.0.7",
 	"grunt-html-build": "^0.7.1",
 	"grunt-preprocess": "^5.1.0",

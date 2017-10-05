@@ -246,6 +246,11 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		removelogging: {
+			dist: {
+				src: [ '<%= app %>/scripts/**/*.js', '!<%= app %>/scripts/**/console-log.js' ]
+			}
+		},
 		watch: {
 			files: ['<%= concat.js.src %>', '<%= app %>/**/*.scss', '<%= app %>/**/*.html'],
 			tasks: ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:html'],
@@ -256,6 +261,7 @@ module.exports = function (grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks( 'grunt-remove-logging' );
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -302,7 +308,7 @@ module.exports = function (grunt) {
 	// When a release is ready publish it on Github
 	grunt.registerTask( 'publish', 'Github Release', function ( target ) {
 		appConfig.gitMessage = 'Release ' + appConfig.timestamp;
-		grunt.task.run(['build', 'gittag:prod', 'gitpush:origin']);
+		grunt.task.run(['removelogging', 'build', 'gittag:prod', 'gitpush:origin']);
 	});
 
 	grunt.registerTask('serve', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'copy:sass', 'copy:images' , 'copy:fonts', 'copy:fonts', 'preprocess:dev', 'connect:livereload', 'watch']);
