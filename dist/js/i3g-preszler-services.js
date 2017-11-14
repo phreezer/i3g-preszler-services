@@ -1,5 +1,5 @@
 /*!
-* i3g-preszler-services - v0.1.15
+* i3g-preszler-services - v0.1.16
 * Homepage: http://i-3global.com
 * Author: i3Global
 * Author URL: http://i-3global.com/
@@ -33,6 +33,10 @@
 		}
 
 
+		function stripHTML(txt) {
+			return $(txt).text();
+		}
+
 		function limitText (txt, limit) {
 			txt = txt || '';
 			if(txt.length > limit) {
@@ -43,7 +47,7 @@
 
 		function formatData(data) {
 			$.each(data, function(index, value) {
-				data[index].description = limitText(data[index].description, 80);
+				data[index].description = limitText(stripHTML(data[index].description), 80);
 			});
 
 			return data;
